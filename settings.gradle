@@ -1,0 +1,2 @@
+rootProject.name = "joga-miga"
+include ':app'

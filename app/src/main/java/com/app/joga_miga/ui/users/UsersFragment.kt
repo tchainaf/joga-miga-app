@@ -1,4 +1,4 @@
-package com.app.joga_miga.ui.dashboard
+package com.app.joga_miga.ui.users
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,12 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.app.joga_miga.R
-import com.app.joga_miga.databinding.FragmentDashboardBinding
+import com.app.joga_miga.databinding.FragmentUsersBinding
+import java.io.Console
 
-class DashboardFragment : Fragment() {
+class UsersFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
-    private var _binding: FragmentDashboardBinding? = null
+    private lateinit var usersViewModel: UsersViewModel
+    private var _binding: FragmentUsersBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,21 +26,22 @@ class DashboardFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
+        usersViewModel =
+                ViewModelProvider(this).get(UsersViewModel::class.java)
 
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentUsersBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        binding.buttonSaveUser.setOnClickListener { saveUser() }
+
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun saveUser() {
     }
 }

@@ -31,15 +31,16 @@ class ClassesFragment : Fragment() {
         _binding = FragmentClassesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textClasses
-        classesViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        binding.buttonSaveClass.setOnClickListener { saveClass() }
+
         return root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun saveClass() {
     }
 }

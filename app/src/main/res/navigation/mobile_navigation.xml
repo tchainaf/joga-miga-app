@@ -12,10 +12,10 @@
             tools:layout="@layout/fragment_home"/>
 
     <fragment
-            android:id="@+id/navigation_dashboard"
-            android:name="com.app.joga_miga.ui.dashboard.DashboardFragment"
-            android:label="@string/title_dashboard"
-            tools:layout="@layout/fragment_dashboard"/>
+            android:id="@+id/navigation_users"
+            android:name="com.app.joga_miga.ui.users.UsersFragment"
+            android:label="@string/title_users"
+            tools:layout="@layout/fragment_users"/>
 
     <fragment
             android:id="@+id/navigation_classes"
